@@ -1,0 +1,21 @@
+#BlueJ class context
+comment0.target=Turtle
+comment0.text=\r\n\ This\ is\ a\ turtle\ in\ a\ first,\ simple\ video\ game.\ It\ can\ be\ controlled\ \r\n\ with\ the\ cursor\ keys\ and\ likes\ to\ eat\ lettuce.\r\n
+comment1.params=pointCounter
+comment1.target=Turtle(Counter)
+comment1.text=\r\n\ Create\ a\ new\ turtle\ with\ a\ reference\ to\ the\ counter\ in\ the\ game.\r\n
+comment2.params=
+comment2.target=void\ act()
+comment3.params=
+comment3.target=void\ checkKeys()
+comment3.text=\r\n\ Check\ whether\ the\ control\ keys\ are\ being\ pressed,\ and\ turn\r\n\ if\ they\ are.\r\n
+comment4.params=
+comment4.target=void\ tryToEat()
+comment4.text=\r\n\ Check\ whether\ we\ can\ see\ Lettuce\ or\ bugs.\ If\ we\ can,\ eat\ it.\r\n
+comment5.params=
+comment5.target=void\ createNewBug()
+comment5.text=\r\n\ Create\ a\ new\ bug\ and\ insert\ it\ at\ a\ random\ location\ in\ the\ world.\r\n
+comment6.params=
+comment6.target=void\ gameOver()
+comment6.text=\r\n\ We\ have\ won\ the\ game.\r\n
+numComments=7
