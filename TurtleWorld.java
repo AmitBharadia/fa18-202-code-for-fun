@@ -1,4 +1,4 @@
-import greenfoot.*;
+    import greenfoot.*;
 
 public class TurtleWorld extends World
 {
@@ -43,9 +43,11 @@ public class TurtleWorld extends World
         counter = new Counter();
         addObject(counter, 58, 26);
 
-        Turtle turtle = new Turtle(counter);
+        Turtle turtle = new Turtle();
         addObject(turtle, 171, 168);
-
+        turtle.addScoreObserver(counter);
+        turtle.addLifeObserver(counter);
+        
         Lettuce lettuce = new Lettuce();
         addObject(lettuce, 419, 106);
         Lettuce lettuce2 = new Lettuce();
@@ -80,13 +82,18 @@ public class TurtleWorld extends World
         addObject(lettuce16, 512, 94);
         Lettuce lettuce17 = new Lettuce();
         addObject(lettuce17, 458, 372);
-        Snake snake = new Snake(counter);
+        Snake snake = new Snake();
         addObject(snake, 456, 73);
-        Snake snake2 = new Snake(counter);
+        snake.addLifeObserver(counter);
+        
+        Snake snake2 = new Snake();
         addObject(snake2, 72, 396);
-        Snake snake3 = new Snake(counter);
+        snake2.addLifeObserver(counter);
+        
+        Snake snake3 = new Snake();
+         //snake2.addLifeObserver(counter);
         //addObject(snake3, 484, 296);
-        Snake snake4 = new Snake(counter);
+        Snake snake4 = new Snake();
         //addObject(snake4, 45, 55);
         Bug bug = new Bug();
         addObject(bug, 361, 159);

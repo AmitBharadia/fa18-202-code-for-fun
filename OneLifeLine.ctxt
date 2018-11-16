@@ -1,0 +1,10 @@
+#BlueJ class context
+comment0.target=OneLifeLine
+comment0.text=\r\n\ Write\ a\ description\ of\ class\ OneLifeLine\ here.\r\n\ \r\n\ @author\ (your\ name)\ \r\n\ @version\ (a\ version\ number\ or\ a\ date)\r\n
+comment1.params=counter
+comment1.target=OneLifeLine(Counter)
+comment2.params=
+comment2.target=void\ addLife()
+comment3.params=
+comment3.target=void\ reduceLife()
+numComments=4

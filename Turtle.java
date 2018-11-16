@@ -4,18 +4,12 @@ import greenfoot.*;
  * This is a turtle in a first, simple video game. It can be controlled 
  * with the cursor keys and likes to eat lettuce.
  */
-public class Turtle extends Animal
+public class Turtle extends Animal implements IScoreSubject, ILifeSubject
 {
-    private Counter counter;
+    private IScoreObserver scoreObserver;
+    private ILifeObserver lifeObserver;
 
-    /**
-     * Create a new turtle with a reference to the counter in the game.
-     */
-    public Turtle(Counter pointCounter)
-    {
-        counter = pointCounter;
-    }
-    
+  
     public void act()
     {
         move(4);
@@ -47,21 +41,18 @@ public class Turtle extends Animal
         if (canSee(Lettuce.class) )
         {
             eat(Lettuce.class);
-            counter.add(10);
+            updateScore(15);
             Greenfoot.playSound("slurp.wav");
         }
         
         if (canSee(Bug.class) )
         {
             eat(Bug.class);
-            counter.addLife();
+            updateLife(1);
             Greenfoot.playSound("slurp.wav");
             createNewBug();
         }
-        
-        //if (counter.getValue() >= 80) {
-        //    gameOver();
-        //}
+ 
     }
 
     /**
@@ -92,4 +83,28 @@ public class Turtle extends Animal
         Greenfoot.playSound("fanfare.wav");
         Greenfoot.stop();
     }
+    
+    public void addScoreObserver(IScoreObserver observer){
+        this.scoreObserver=observer;
+    }
+    
+    public void removeObserver(IScoreObserver observer){
+        this.scoreObserver=null;
+    }
+    public void updateScore(int val){
+       scoreObserver.updateScoreOnKeyEvent(val);
+    }
+    
+    
+    public void addLifeObserver(ILifeObserver observer){
+        this.lifeObserver=observer;
+    }
+    
+    public void removeObserver(ILifeObserver observer){
+        this.lifeObserver=null;
+    }
+    public void updateLife(int val){
+        lifeObserver.updateLife(val);
+    }
+    
 }

@@ -6,10 +6,9 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  * @author mik
  * @version 1.0
  */
-public class Snake extends Animal
+public class Snake extends Animal implements ILifeSubject
 {
-    private Counter counter;
-   
+    private ILifeObserver lifeObserver;
     public void act()
     {
         // vhfj vhfdkvbhd vbhdfj
@@ -19,11 +18,7 @@ public class Snake extends Animal
         tryToEatTurtle();
     }
 
-    public Snake(Counter pointCounter)
-    {
-        counter = pointCounter;
-    }
-    
+
     /**
      * With a 10% probability, turn a bit right or left.
      */
@@ -54,7 +49,7 @@ public class Snake extends Animal
         if (canSee(Turtle.class) )
         {
             
-            if(counter.getLives()>1){
+            /*if(counter.getLives()>1){
                 counter.reduceLife();
                 eat(Turtle.class);
                 createNewTurtle();
@@ -62,23 +57,23 @@ public class Snake extends Animal
                 TurtleWorld world = (TurtleWorld) getWorld();
                 eat(Turtle.class);
                 world.gameOver();
-            }
+            }*/
+            
+            eat(Turtle.class);
+            updateLife(-1);
          }
     }
     
-    private void createNewTurtle()
-    {
-        Turtle newTurtle= new Turtle(counter);
-        
-        World world;
-        world = getWorld();
-        
-        int worldWidth = world.getWidth();
-        int worldHeight = world.getHeight();
-        
-        int x = Greenfoot.getRandomNumber(worldWidth);
-        int y = Greenfoot.getRandomNumber(worldHeight);
-        
-        world.addObject(newTurtle, x, y);
+    
+    
+    public void addLifeObserver(ILifeObserver observer){
+        this.lifeObserver=observer;
+    }
+    
+    public void removeObserver(ILifeObserver observer){
+        this.lifeObserver=null;
+    }
+    public void updateLife(int val){
+        lifeObserver.updateLife(val);
     }
 }

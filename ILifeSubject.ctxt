@@ -1,0 +1,10 @@
+#BlueJ class context
+comment0.target=ILifeSubject
+comment0.text=\r\n\ Write\ a\ description\ of\ class\ ILifeSubject\ here.\r\n\ \r\n\ @author\ (your\ name)\ \r\n\ @version\ (a\ version\ number\ or\ a\ date)\r\n
+comment1.params=observer
+comment1.target=void\ addLifeObserver(ILifeObserver)
+comment2.params=observer
+comment2.target=void\ removeObserver(ILifeObserver)
+comment3.params=life
+comment3.target=void\ updateLife(int)
+numComments=4

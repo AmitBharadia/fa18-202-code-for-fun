@@ -6,7 +6,7 @@ import greenfoot.*;
  * @author mik
  * @version 1.0
  */
-public class Counter extends Actor
+public class Counter extends Actor implements IScoreObserver, ILifeObserver
 { 
     private static final Color transparent = new Color(0,0,0,0);
     private GreenfootImage background;
@@ -14,7 +14,25 @@ public class Counter extends Actor
     private int target;
     private int lives;
     private int oldLives;
+    private ILifeLine currentLifeLine;
+    private OneLifeLine oneLife;
+    private TwoLifeLine twoLife;
+    private ThreeLifeLine threeLife;
 
+    void setTwoLifeLine(){
+        currentLifeLine=twoLife;
+    }
+    
+    void setThreeLifeLine(){
+        currentLifeLine=threeLife;
+    }
+    
+    
+    void setOneLifeLine(){
+        currentLifeLine=oneLife;
+    }
+   
+    
     /**
      * Create a new counter, initialised to 0. 
      */
@@ -25,7 +43,12 @@ public class Counter extends Actor
         target = 0;
         lives=1;
         oldLives=1;
+        oneLife=new OneLifeLine(this);
+        twoLife=new TwoLifeLine(this);
+        threeLife=new ThreeLifeLine(this);
+        currentLifeLine=oneLife;
         updateImage();
+        
     }
     
     /**
@@ -63,17 +86,16 @@ public class Counter extends Actor
      */
     public void addLife()
     {
-        if(lives<3){
-            lives++;
-        }
+      lives++;
     }
 
     public int getLives(){
         return lives;
     }
+    
+ 
 
     public void reduceLife(){
-        if(lives>1)
          lives--;
     }
 
@@ -107,5 +129,41 @@ public class Counter extends Actor
         image.drawImage(text, (image.getWidth()-text.getWidth())/2, 
                         (image.getHeight()-text.getHeight())/2);
         setImage(image);
+    }
+    
+    public void updateScoreOnKeyEvent(int val){
+        target +=val;
+    }
+    
+    public void updateLife(int val){
+        if(val>0)
+           currentLifeLine.addLife();
+        
+        if(val<0){
+             currentLifeLine.reduceLife();
+        }
+        
+    }
+    
+    public void endGame(){
+        TurtleWorld world = (TurtleWorld) getWorld();
+        world.gameOver();
+    }
+    
+    public void createNewTurtle()
+    {
+        Turtle newTurtle= new Turtle();
+        newTurtle.addScoreObserver(this);
+        newTurtle.addLifeObserver(this);
+        World world;
+        world = getWorld();
+        
+        int worldWidth = world.getWidth();
+        int worldHeight = world.getHeight();
+        
+        int x = Greenfoot.getRandomNumber(worldWidth);
+        int y = Greenfoot.getRandomNumber(worldHeight);
+        
+        world.addObject(newTurtle, x, y);
     }
 }
