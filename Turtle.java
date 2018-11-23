@@ -41,8 +41,15 @@ public class Turtle extends Animal implements IScoreSubject, ILifeSubject
         if (canSee(Lettuce.class) )
         {
             eat(Lettuce.class);
-            updateScore(15);
+            updateScore(15);   
             Greenfoot.playSound("slurp.wav");
+            if(getWorld().getObjects(Lettuce.class).size() == 0) 
+            {
+                    TurtleWorld world = (TurtleWorld) getWorld();
+                    world.Upgrade();
+                    return;
+                    
+            }
         }
         
         if (canSee(Bug.class) )
@@ -80,8 +87,12 @@ public class Turtle extends Animal implements IScoreSubject, ILifeSubject
      */
     public void gameOver()
     {
-        Greenfoot.playSound("fanfare.wav");
-        Greenfoot.stop();
+       Greenfoot.playSound("fanfare.wav");
+       Greenfoot.stop();
+       
+       //TurtleWorld world = (TurtleWorld) getWorld();
+       //world.gameOver();
+       
     }
     
     public void addScoreObserver(IScoreObserver observer){
