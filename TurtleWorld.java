@@ -5,8 +5,9 @@ public class TurtleWorld extends World
 {
     private Counter counter;
     
-    private ArrayList<ILevelStrategy> levels;
+    //private ArrayList<ILevelStrategy> levels;
     
+    private IUpgradeChain current;
     private ScoreBoard score = new ScoreBoard(560, 440);
     
     
@@ -18,14 +19,14 @@ public class TurtleWorld extends World
     public TurtleWorld() 
     {
         super(600, 480, 1);
-        ILevelStrategy l1 = new LevelOne(this);
-        ILevelStrategy l2 = new LevelTwo(this);
-        ILevelStrategy l3 = new LevelThree(this);
-        levels = new ArrayList<ILevelStrategy>();
-        levels.add(l1);
-        //levels.add(l2);
-        //levels.add(l3);
-        prepare();  
+        IUpgradeChain c1 = new LevelOne(this);
+        IUpgradeChain c2 = new LevelTwo(this);
+        IUpgradeChain c3 = new LevelThree(this);
+        c1.setNext(c2);
+        c2.setNext(c3);
+        
+        current = c1;
+        prepare();
     }
 
     
@@ -40,7 +41,8 @@ public class TurtleWorld extends World
         addObject(score, getWidth() / 2, getHeight() / 2);
         Greenfoot.delay(50);
         removeObject(score); 
-        levels.remove(0);
+        /*
+         * levels.remove(0);
         
         if(levels.size()>0)
         {
@@ -49,6 +51,18 @@ public class TurtleWorld extends World
         else
         {
             gameOver();
+        }
+        */
+       
+       this.current = this.current.getNext();
+       
+       if(this.current != null)
+       {
+       this.current.handleUpgrade();
+       }
+       else
+       {
+           gameOver();
         }
         
         
@@ -84,6 +98,6 @@ public class TurtleWorld extends World
      */
     private void prepare()
     {
-      levels.get(0).prepare();
+      this.current.prepare();
     }
 }

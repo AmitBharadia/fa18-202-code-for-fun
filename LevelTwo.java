@@ -4,10 +4,12 @@
  * @author (your name) 
  * @version (a version number or a date)
  */
-public class LevelTwo implements ILevelStrategy
+public class LevelTwo implements IUpgradeChain
 {
     // instance variables - replace the example below with your own
     private TurtleWorld world;
+    
+    private IUpgradeChain next;
 
     /**
      * Constructor for objects of class LevelTwo
@@ -83,5 +85,23 @@ public class LevelTwo implements ILevelStrategy
         world.addObject(snake4, 45, 55);   
         snake4.addLifeObserver(counter);
 
+    }
+    
+     public void setNext(IUpgradeChain next)
+    {
+     this.next = next;   
+    }
+    
+    public void handleUpgrade()
+    {
+        next.prepare();
+     }
+    
+    public IUpgradeChain getNext()
+    {
+     if(this.next != null)
+     return next;
+     else
+     return null;
     }
 }
