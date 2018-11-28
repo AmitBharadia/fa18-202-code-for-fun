@@ -21,9 +21,9 @@ public class TurtleWorld extends World
         super(600, 480, 1);
         IUpgradeChain c1 = new LevelOne(this);
         IUpgradeChain c2 = new LevelTwo(this);
-        IUpgradeChain c3 = new LevelThree(this);
+        //IUpgradeChain c3 = new LevelThree(this);
         c1.setNext(c2);
-        c2.setNext(c3);
+        //c2.setNext(c3);
         
         current = c1;
         prepare();
@@ -54,8 +54,7 @@ public class TurtleWorld extends World
         }
         */
        
-       this.current = this.current.getNext();
-       
+     
        if(this.current != null)
        {
        this.current.handleUpgrade();

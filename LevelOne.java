@@ -26,7 +26,10 @@ public class LevelOne implements IUpgradeChain
     
     public void handleUpgrade()
     {
+        if(next != null)
         next.prepare();
+        else
+        world.gameOver();
      }
     
     public void prepare()

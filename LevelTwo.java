@@ -94,7 +94,10 @@ public class LevelTwo implements IUpgradeChain
     
     public void handleUpgrade()
     {
+        if(next != null)
         next.prepare();
+        else
+        world.gameOver();
      }
     
     public IUpgradeChain getNext()
