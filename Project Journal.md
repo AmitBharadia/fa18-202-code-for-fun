@@ -22,25 +22,27 @@
 
 #### Amit 
 
-  What tasks did I work on / complete?
-  What am I planning to work on next?
-  What tasks are blocked waiting on another team member?
+  Q1 => Read the project requirements, anlyzed games and setup github project  
+  Q2 => Finalize Game and Actors involved, Discuss Design patterns  
+  Q3 => No blockers  
+    
   
 #### Dharma
-  What tasks did I work on / complete?
-  What am I planning to work on next?
-  What tasks are blocked waiting on another team member?
+  Q1 => Read the project requirements, anlyzed games and setup github project  
+  Q2 => Finalize Game and Actors involved, Discuss Design patterns  
+  Q3 => No blockers  
+    
   
 ## Week 3:
 ### Minutes of the Meeting
 
-
 #### Amit 
-  What tasks did I work on / complete?
-  What am I planning to work on next?
-  What tasks are blocked waiting on another team member?
+  Q1 => Read the project requirements, anlyzed games and setup github project  
+  Q2 => Finalize Game and Actors involved, Discuss Design patterns  
+  Q3 => No blockers  
   
 #### Dharma
-  What tasks did I work on / complete?
-  What am I planning to work on next?
-  What tasks are blocked waiting on another team member?
+  Q1 => Read the project requirements, anlyzed games and setup github project  
+  Q2 => Finalize Game and Actors involved, Discuss Design patterns  
+  Q3 => No blockers  
+    
