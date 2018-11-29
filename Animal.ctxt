@@ -10,4 +10,6 @@ comment2.text=\r\n\ Return\ true\ if\ we\ can\ see\ an\ object\ of\ class\ 'clss
 comment3.params=clss
 comment3.target=void\ eat(java.lang.Class)
 comment3.text=\r\n\ Try\ to\ eat\ an\ object\ of\ class\ 'clss'.\ This\ is\ only\ successful\ if\ there\r\n\ is\ such\ an\ object\ where\ we\ currently\ are.\ Otherwise\ this\ method\ does\r\n\ nothing.\r\n
-numComments=4
+comment4.params=
+comment4.target=Animal\ cloneActor()
+numComments=5
