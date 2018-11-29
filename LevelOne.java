@@ -9,7 +9,12 @@ public class LevelOne implements IUpgradeChain
     // instance variables - replace the example below with your own
     private TurtleWorld world;
     
+    private Counter counter = Counter.getInstance();
+    
     private IUpgradeChain next;
+    
+    private boolean isDone;
+    
 
     /**
      * Constructor for objects of class LevelOne
@@ -17,6 +22,7 @@ public class LevelOne implements IUpgradeChain
     public LevelOne(TurtleWorld world)
     {
        this.world = world;
+       isDone = false;
     }
 
     public void setNext(IUpgradeChain next)
@@ -26,17 +32,25 @@ public class LevelOne implements IUpgradeChain
     
     public void handleUpgrade()
     {
-        if(next != null)
-        next.prepare();
+        if(isDone)
+        {
+            if(next != null)
+            next.handleUpgrade();
+            else
+            world.gameOver();
+        }
         else
-        world.gameOver();
+        {
+        prepare();
+        }
+        
      }
     
     public void prepare()
     {
-        Counter counter = new Counter();
+        isDone = true;
+        
         world.addObject(counter, 58, 26);
-
         Turtle turtle = new Turtle();
         world.addObject(turtle, 171, 168);
         turtle.addScoreObserver(counter);

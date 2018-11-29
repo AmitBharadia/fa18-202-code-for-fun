@@ -10,6 +10,10 @@ public class LevelThree implements IUpgradeChain
     private TurtleWorld world;
     
     private IUpgradeChain next;
+    
+        private Counter counter = Counter.getInstance();
+    
+    private boolean isDone;
 
     /**
      * Constructor for objects of class LevelTwo
@@ -17,14 +21,16 @@ public class LevelThree implements IUpgradeChain
     public LevelThree(TurtleWorld world)
     {
         this.world = world;
+        isDone = false;
     }
 
     
     public void prepare()
     {
-        Counter counter = new Counter();
-        world.addObject(counter, 58, 26);
+        isDone = true;
         
+        
+        world.addObject(counter, 58, 26);
         Turtle turtle = new Turtle();
         world.addObject(turtle, 171, 168);
         turtle.addScoreObserver(counter);
@@ -95,10 +101,17 @@ public class LevelThree implements IUpgradeChain
     
     public void handleUpgrade()
     {
-       if(next != null)
-        next.prepare();
+        if(isDone)
+        {
+            if(next != null)
+            next.handleUpgrade();
+            else
+            world.gameOver();
+        }
         else
-        world.gameOver();
+        {
+        prepare();
+        }
      }
     
     public IUpgradeChain getNext()

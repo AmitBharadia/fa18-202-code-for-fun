@@ -8,6 +8,9 @@ import greenfoot.*;
  */
 public class Counter extends Actor implements IScoreObserver, ILifeObserver
 { 
+    //Singleton instance for Counter
+    private static Counter counter = null;
+    
     private static final Color transparent = new Color(0,0,0,0);
     private GreenfootImage background;
     private int value;
@@ -36,7 +39,7 @@ public class Counter extends Actor implements IScoreObserver, ILifeObserver
     /**
      * Create a new counter, initialised to 0. 
      */
-    public Counter()
+    private Counter()
     {
         background = getImage();  // get image from class
         value = 0;
@@ -48,6 +51,21 @@ public class Counter extends Actor implements IScoreObserver, ILifeObserver
         threeLife=new ThreeLifeLine(this);
         currentLifeLine=oneLife;
         updateImage();
+        
+    }
+    
+    /**
+     * 
+     * 
+     */
+    public static Counter getInstance()
+    {
+        if(counter == null)
+        {
+            counter = new Counter();
+        }
+        
+        return counter;
         
     }
     
@@ -153,8 +171,8 @@ public class Counter extends Actor implements IScoreObserver, ILifeObserver
     public void createNewTurtle()
     {
         Turtle newTurtle= new Turtle();
-        newTurtle.addScoreObserver(this);
-        newTurtle.addLifeObserver(this);
+        newTurtle.addScoreObserver(this.counter);
+        newTurtle.addLifeObserver(this.counter);
         World world;
         world = getWorld();
         

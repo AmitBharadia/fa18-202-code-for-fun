@@ -10,6 +10,10 @@ public class LevelTwo implements IUpgradeChain
     private TurtleWorld world;
     
     private IUpgradeChain next;
+    
+    private Counter counter = Counter.getInstance();
+    
+    private boolean isDone;
 
     /**
      * Constructor for objects of class LevelTwo
@@ -22,9 +26,9 @@ public class LevelTwo implements IUpgradeChain
     
     public void prepare()
     {
-        Counter counter = new Counter();
-        world.addObject(counter, 58, 26);
+        isDone = true;
         
+        world.addObject(counter, 58, 26);
         Turtle turtle = new Turtle();
         world.addObject(turtle, 171, 168);
         turtle.addScoreObserver(counter);
@@ -41,29 +45,29 @@ public class LevelTwo implements IUpgradeChain
         Lettuce lettuce5 = new Lettuce();
         world.addObject(lettuce5, 405, 294);
         Lettuce lettuce6 = new Lettuce();
-        world.addObject(lettuce6, 243, 61);
+        //world.addObject(lettuce6, 243, 61);
         Lettuce lettuce7 = new Lettuce();
-        world.addObject(lettuce7, 103, 70);
+        //world.addObject(lettuce7, 103, 70);
         Lettuce lettuce8 = new Lettuce();
-        world.addObject(lettuce8, 68, 335);
+        //world.addObject(lettuce8, 68, 335);
         Lettuce lettuce9 = new Lettuce();
-        world.addObject(lettuce9, 218, 312);
+       // world.addObject(lettuce9, 218, 312);
         Lettuce lettuce10 = new Lettuce();
-        world.addObject(lettuce10, 331, 205);
+        //world.addObject(lettuce10, 331, 205);
         Lettuce lettuce11 = new Lettuce();
-        world.addObject(lettuce11, 129, 418);
+        //world.addObject(lettuce11, 129, 418);
         Lettuce lettuce12 = new Lettuce();
-        world.addObject(lettuce12, 520, 453);
+        //world.addObject(lettuce12, 520, 453);
         Lettuce lettuce13 = new Lettuce();
-        world.addObject(lettuce13, 568, 23);
+        //world.addObject(lettuce13, 568, 23);
         Lettuce lettuce14 = new Lettuce();
-        world.addObject(lettuce14, 38, 237);
+        //world.addObject(lettuce14, 38, 237);
         Lettuce lettuce15 = new Lettuce();
-        world.addObject(lettuce15, 345, 62);
+        //world.addObject(lettuce15, 345, 62);
         Lettuce lettuce16 = new Lettuce();
-        world.addObject(lettuce16, 512, 94);
+        //world.addObject(lettuce16, 512, 94);
         Lettuce lettuce17 = new Lettuce();
-        world.addObject(lettuce17, 458, 372);
+        //world.addObject(lettuce17, 458, 372);
         Snake snake = new Snake();
         world.addObject(snake, 456, 73);
         snake.addLifeObserver(counter);
@@ -79,10 +83,10 @@ public class LevelTwo implements IUpgradeChain
         world.addObject(bug2, 222, 402);
         
         Snake snake3 = new Snake();
-        world.addObject(snake3, 484, 296);
+        //world.addObject(snake3, 484, 296);
         snake3.addLifeObserver(counter);
         Snake snake4 = new Snake();
-        world.addObject(snake4, 45, 55);   
+        //world.addObject(snake4, 45, 55);   
         snake4.addLifeObserver(counter);
 
     }
@@ -94,10 +98,17 @@ public class LevelTwo implements IUpgradeChain
     
     public void handleUpgrade()
     {
-        if(next != null)
-        next.prepare();
+        if(isDone)
+        {
+            if(next != null)
+            next.handleUpgrade();
+            else
+            world.gameOver();
+        }
         else
-        world.gameOver();
+        {
+        prepare();
+        }
      }
     
     public IUpgradeChain getNext()
