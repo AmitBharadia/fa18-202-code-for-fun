@@ -20,10 +20,13 @@ public class ScoreBoard extends Actor
 {
     // The vertical gap between user images in the scoreboard:
     private static final int GAP = 10;
+    
     // The height of the "All Players"/"Near Me" text at the top:
     private static final int HEADER_TEXT_HEIGHT = 25;
+    
     // The main text color:
     private static final Color MAIN_COLOR = new Color(0x60, 0x60, 0x60); // dark grey
+    
     // The score color:
     private static final Color SCORE_COLOR = new Color(0xB0, 0x40, 0x40); // orange-y
 

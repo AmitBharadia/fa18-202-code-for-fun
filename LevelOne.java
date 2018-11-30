@@ -59,8 +59,6 @@ public class LevelOne implements IUpgradeChain
     {
         isDone = true;
         
-        //world.addObject(counter, 58, 26);
-        
         Turtle turtle = new Turtle();
         world.addObject(turtle, 171, 168);
         turtle.addScoreObserver(counter);
@@ -93,7 +91,12 @@ public class LevelOne implements IUpgradeChain
         {
             world.addObject(bug.cloneActor(), Greenfoot.getRandomNumber(worldWidth),Greenfoot.getRandomNumber(worldHeight));
         }
+        
+        
     }
+    
+    
+    
     
     public IUpgradeChain getNext()
     {

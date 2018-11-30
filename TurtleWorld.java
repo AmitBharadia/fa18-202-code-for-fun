@@ -8,7 +8,8 @@ public class TurtleWorld extends World
     private IUpgradeChain current;
     private ScoreBoard score = new ScoreBoard(560, 440);
     private Counter counter=new Counter();
-    
+    private Stage stage = new Stage();
+    private Notification nextStage = new Notification("nextStage.png",getWidth() / 2, getHeight() / 2);
 
     /**
      * Create the turtle world. Our world has a size 
@@ -24,6 +25,7 @@ public class TurtleWorld extends World
         c2.setNext(c3);
         current = c1;
         addObject(counter, 58, 26);
+        addObject(stage, getWidth() - 90, 26);
         prepare();
     }
 
@@ -33,12 +35,16 @@ public class TurtleWorld extends World
      */
     public void Upgrade()
     {
+        stage.updateStage();
         removeObjects(getObjects(Turtle.class));
-        removeObjects(getObjects(Snake.class));        
-        addObject(score, getWidth() / 2, getHeight() / 2);
+        removeObjects(getObjects(Snake.class)); 
+        removeObjects(getObjects(Bug.class)); 
+        addObject(nextStage, getWidth() / 2, getHeight() / 2);
         Greenfoot.delay(50);
-        removeObject(score); 
+        removeObject(nextStage); 
      
+        //Greenfoot.stop();
+        
        if(this.current != null)
        {
          this.current.handleUpgrade();
@@ -55,8 +61,17 @@ public class TurtleWorld extends World
     public void gameOver()
     {
         Greenfoot.playSound("game-over.wav");
-         
-        addObject(score, getWidth() / 2, getHeight() / 2);
+        
+        if(getObjects(Lettuce.class).size() == 0)
+        {
+        Notification gameOver = new Notification("win.jpg",getWidth()/2, getHeight()/2);
+        addObject(gameOver,getWidth() / 2, getHeight() / 2 );
+        }
+        else
+        {
+         Notification gameOver = new Notification("lose.png",getWidth()/2, getHeight()/2);
+        addObject(gameOver,getWidth() / 2, getHeight() / 2 );   
+        }
         
         Greenfoot.stop();        
     }

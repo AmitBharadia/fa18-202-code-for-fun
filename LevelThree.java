@@ -37,6 +37,7 @@ public class LevelThree implements IUpgradeChain
        isDone = true;
        
         world.setBackground("sand2.jpg");
+        
         Turtle turtle = new Turtle();
         world.addObject(turtle, 171, 168);
         turtle.addScoreObserver(counter);
