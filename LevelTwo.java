@@ -27,16 +27,18 @@ public class LevelTwo implements IUpgradeChain
     {
         this.world = world;
         isDone = false;
+        
         this.worldWidth = world.getWidth();
         this.worldHeight = world.getHeight();
         this.counter=counter;
+        
     }
 
     
     public void prepare()
     {
         isDone = true;
-        
+        world.setBackground("weave.jpg");
         Turtle turtle = new Turtle();
         world.addObject(turtle, 171, 168);
         turtle.addScoreObserver(counter);
