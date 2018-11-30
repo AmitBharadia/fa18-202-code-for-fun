@@ -8,8 +8,6 @@ import greenfoot.*;
  */
 public class Counter extends Actor implements IScoreObserver, ILifeObserver
 { 
-    //Singleton instance for Counter
-    private static Counter counter = null;
     
     private static final Color transparent = new Color(0,0,0,0);
     private GreenfootImage background;
