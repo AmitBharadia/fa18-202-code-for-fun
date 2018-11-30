@@ -17,6 +17,7 @@ public class Stage extends Actor
     public Stage()
     {
         background = getImage();  // get image from class
+        background.scale (background.getWidth ()*2, background.getHeight()*2);
         stage = 1;
         updateImage();   
     }
@@ -30,7 +31,15 @@ public class Stage extends Actor
      private void updateImage()
     {
         GreenfootImage image = new GreenfootImage(background);
-        GreenfootImage text = new GreenfootImage("Stage : " + stage, 14, Color.BLACK, transparent);
+        GreenfootImage text;
+        if(stage==1){
+            text = new GreenfootImage("Valles Marineris", 20, Color.BLACK, transparent);
+        }else if(stage==2){
+            text = new GreenfootImage("Olympus Mons", 20, Color.BLACK, transparent);
+        }else{
+            text = new GreenfootImage("The Great Red Spot", 20, Color.BLACK, transparent);
+        }
+        
         image.drawImage(text, (image.getWidth()-text.getWidth())/2, 
                         (image.getHeight()-text.getHeight())/2);
         setImage(image);

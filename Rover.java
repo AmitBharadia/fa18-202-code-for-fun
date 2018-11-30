@@ -1,15 +1,19 @@
-import greenfoot.*; 
-
-/**
- * This is a turtle in a first, simple video game. It can be controlled 
- * with the cursor keys and likes to eat lettuce.
- */
-public class Turtle extends Animal implements IScoreSubject, ILifeSubject
-{
-    private IScoreObserver scoreObserver;
-    private ILifeObserver lifeObserver;
-
-  
+    import greenfoot.*; 
+    
+    /**
+     * This is a turtle in a first, simple video game. It can be controlled 
+     * with the cursor keys and likes to eat lettuce.
+     */
+    public class Rover extends Habitant implements IScoreSubject, ILifeSubject
+    {
+        private IScoreObserver scoreObserver;
+        private ILifeObserver lifeObserver;
+       public Rover(){
+        GreenfootImage image = getImage ();
+        image.scale (image.getWidth ()-60, image.getHeight()-60);
+        setImage (image);
+    }
+      
     public void act()
     {
         move(4);
@@ -38,49 +42,31 @@ public class Turtle extends Animal implements IScoreSubject, ILifeSubject
      */
     public void tryToEat()
     {
-        if (canSee(Lettuce.class) )
+        if (canSee(Drink.class) )
         {
-            eat(Lettuce.class);
+            eat(Drink.class);
             updateScore(15);   
             Greenfoot.playSound("slurp.wav");
-            if(getWorld().getObjects(Lettuce.class).size() == 0) 
+            if(getWorld().getObjects(Drink.class).size() == 0) 
             {
-                    TurtleWorld world = (TurtleWorld) getWorld();
+                    Mars world = (Mars) getWorld();
                     world.Upgrade();
                     return;
                     
             }
         }
         
-        if (canSee(Bug.class) )
+        if (canSee(O2.class) )
         {
-            eat(Bug.class);
+            eat(O2.class);
             updateLife(1);
             Greenfoot.playSound("slurp.wav");
-            //createNewBug();
+           
         }
  
     }
 
-    /**
-     * Create a new bug and insert it at a random location in the world.
-     */
-    private void createNewBug()
-    {
-        Bug newBug;
-        newBug = new Bug();
-        
-        World world;
-        world = getWorld();
-        
-        int worldWidth = world.getWidth();
-        int worldHeight = world.getHeight();
-        
-        int x = Greenfoot.getRandomNumber(worldWidth);
-        int y = Greenfoot.getRandomNumber(worldHeight);
-        
-        world.addObject(newBug, x, y);
-    }
+  
     
     /**
      * We have won the game.

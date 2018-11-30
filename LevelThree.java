@@ -9,7 +9,7 @@ import greenfoot.*;
 public class LevelThree implements IUpgradeChain
 {
     // instance variables - replace the example below with your own
-    private TurtleWorld world;
+    private Mars world;
     
     private IUpgradeChain next;
     
@@ -22,7 +22,7 @@ public class LevelThree implements IUpgradeChain
     /**
      * Constructor for objects of class LevelTwo
      */
-    public LevelThree(TurtleWorld world,Counter counter)
+    public LevelThree(Mars world,Counter counter)
     {
         this.world = world;
         isDone = false;
@@ -38,37 +38,37 @@ public class LevelThree implements IUpgradeChain
        
         world.setBackground("sand2.jpg");
         
-        Turtle turtle = new Turtle();
-        world.addObject(turtle, 171, 168);
-        turtle.addScoreObserver(counter);
-        turtle.addLifeObserver(counter);
+        Rover rover = new Rover();
+        world.addObject(rover, 171, 168);
+        rover.addScoreObserver(counter);
+        rover.addLifeObserver(counter);
         
             
-        Lettuce lettuce = new Lettuce();
+        Drink drink = new Drink();
       
          for(int i=0;i<10;i++)
         {
-            world.addObject(lettuce.cloneActor(), Greenfoot.getRandomNumber(worldWidth),Greenfoot.getRandomNumber(worldHeight));
+            world.addObject(drink.cloneActor(), Greenfoot.getRandomNumber(worldWidth),Greenfoot.getRandomNumber(worldHeight));
         }
        
         
-        Snake snake = new Snake();
+        Alien alien = new Alien();
         
-        for(int i=0;i<3;i++)
+        for(int i=0;i<5;i++)
         {
-            world.addObject(snake.cloneActor(), Greenfoot.getRandomNumber(worldWidth),Greenfoot.getRandomNumber(worldHeight));
+            world.addObject(alien.cloneActor(), Greenfoot.getRandomNumber(worldWidth),Greenfoot.getRandomNumber(worldHeight));
         }
         
-        for(Snake s : world.getObjects(Snake.class))
+        for(Alien s : world.getObjects(Alien.class))
         {
             s.addLifeObserver(counter);
         }
         
-        Bug bug = new Bug();
+        O2 o2 = new O2();
         
-        for(int i=0;i<2;i++)
+        for(int i=0;i<5;i++)
         {
-            world.addObject(bug.cloneActor(), Greenfoot.getRandomNumber(worldWidth),Greenfoot.getRandomNumber(worldHeight));
+            world.addObject(o2.cloneActor(), Greenfoot.getRandomNumber(worldWidth),Greenfoot.getRandomNumber(worldHeight));
         }
 
     }

@@ -7,7 +7,7 @@ import greenfoot.*;
  * @author Michael Kšlling
  * @version 2.0
  */
-public class Animal extends Actor implements ActorClone
+public class Habitant extends Actor implements ActorClone
 {
     /**
      * Test if we are close to one of the edges of the world. Return true is we are.
@@ -47,12 +47,12 @@ public class Animal extends Actor implements ActorClone
         }
     }
     
-    public Animal cloneActor()
+    public Habitant cloneActor()
     { 
-        Animal clone = null; 
+        Habitant clone = null; 
         try 
         { 
-            clone = (Animal)super.clone(); 
+            clone = (Habitant)super.clone(); 
         }  
         catch (CloneNotSupportedException e)  
         { 

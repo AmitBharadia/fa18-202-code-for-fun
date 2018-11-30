@@ -6,9 +6,14 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  * @author mik
  * @version 1.0
  */
-public class Snake extends Animal implements ILifeSubject
+public class Alien extends Habitant implements ILifeSubject
 {
     private ILifeObserver lifeObserver;
+    Alien(){
+        GreenfootImage image = getImage ();
+        image.scale (image.getWidth ()/22, image.getHeight()/22);
+        setImage (image);
+    }
     public void act()
     {
         // vhfj vhfdkvbhd vbhdfj
@@ -46,7 +51,7 @@ public class Snake extends Animal implements ILifeSubject
      */
     public void tryToEatTurtle()
     {
-        if (canSee(Turtle.class) )
+        if (canSee(Rover.class) )
         {
             
             /*if(counter.getLives()>1){
@@ -59,7 +64,7 @@ public class Snake extends Animal implements ILifeSubject
                 world.gameOver();
             }*/
             
-            eat(Turtle.class);
+            eat(Rover.class);
             updateLife(-1);
          }
     }

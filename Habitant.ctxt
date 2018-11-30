@@ -1,5 +1,5 @@
 #BlueJ class context
-comment0.target=Animal
+comment0.target=Habitant
 comment0.text=\r\n\ Animal.\ This\ is\ the\ base\ class\ for\ all\ animals.\ In\ addition\ to\ the\ standard\ Actor\r\n\ methods,\ it\ provides\ methods\ to\ eat\ other\ animals\ and\ check\ for\ the\ edge\ of\ the\ world.\r\n\ \r\n\ @author\ Michael\ K\u00F6lling\r\n\ @version\ 2.0\r\n
 comment1.params=
 comment1.target=boolean\ atWorldEdge()
@@ -11,5 +11,5 @@ comment3.params=clss
 comment3.target=void\ eat(java.lang.Class)
 comment3.text=\r\n\ Try\ to\ eat\ an\ object\ of\ class\ 'clss'.\ This\ is\ only\ successful\ if\ there\r\n\ is\ such\ an\ object\ where\ we\ currently\ are.\ Otherwise\ this\ method\ does\r\n\ nothing.\r\n
 comment4.params=
-comment4.target=Animal\ cloneActor()
+comment4.target=Habitant\ cloneActor()
 numComments=5

@@ -147,15 +147,15 @@ public class Counter extends Actor implements IScoreObserver, ILifeObserver
     }
     
     public void endGame(){
-        TurtleWorld world = (TurtleWorld) getWorld();
+        Mars world = (Mars) getWorld();
         world.gameOver();
     }
     
     public void createNewTurtle()
     {
-        Turtle newTurtle= new Turtle();
-        newTurtle.addScoreObserver(this);
-        newTurtle.addLifeObserver(this);
+        Rover newRover= new Rover();
+        newRover.addScoreObserver(this);
+        newRover.addLifeObserver(this);
         World world;
         world = getWorld();
         
@@ -165,6 +165,6 @@ public class Counter extends Actor implements IScoreObserver, ILifeObserver
         int x = Greenfoot.getRandomNumber(worldWidth);
         int y = Greenfoot.getRandomNumber(worldHeight);
         
-        world.addObject(newTurtle, x, y);
+        world.addObject(newRover, x, y);
     }
 }

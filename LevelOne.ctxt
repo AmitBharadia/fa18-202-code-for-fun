@@ -1,7 +1,7 @@
 #BlueJ class context
 comment0.target=LevelOne
 comment1.params=world\ counter
-comment1.target=LevelOne(TurtleWorld,\ Counter)
+comment1.target=LevelOne(Mars,\ Counter)
 comment1.text=\r\n\ Constructor\ for\ objects\ of\ class\ LevelOne\r\n
 comment2.params=next
 comment2.target=void\ setNext(IUpgradeChain)

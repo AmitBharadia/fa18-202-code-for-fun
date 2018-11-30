@@ -1,7 +1,7 @@
     import greenfoot.*;
     import java.util.*;
 
-public class TurtleWorld extends World
+public class Mars extends World
 {
     //public Counter counter;
     
@@ -15,9 +15,9 @@ public class TurtleWorld extends World
      * Create the turtle world. Our world has a size 
      * of 560x460 cells, where every cell is just 1 pixel.
      */
-    public TurtleWorld() 
+    public Mars() 
     {
-        super(600, 480, 1);
+        super(1000,600, 1);
         IUpgradeChain c1 = new LevelOne(this,counter);
         IUpgradeChain c2 = new LevelTwo(this,counter);
         IUpgradeChain c3 = new LevelThree(this,counter);
@@ -36,9 +36,9 @@ public class TurtleWorld extends World
     public void Upgrade()
     {
         stage.updateStage();
-        removeObjects(getObjects(Turtle.class));
-        removeObjects(getObjects(Snake.class)); 
-        removeObjects(getObjects(Bug.class)); 
+        removeObjects(getObjects(Rover.class));
+        removeObjects(getObjects(Alien.class)); 
+        removeObjects(getObjects(O2.class)); 
         addObject(nextStage, getWidth() / 2, getHeight() / 2);
         Greenfoot.delay(50);
         removeObject(nextStage); 
@@ -62,7 +62,7 @@ public class TurtleWorld extends World
     {
         Greenfoot.playSound("game-over.wav");
         
-        if(getObjects(Lettuce.class).size() == 0)
+        if(getObjects(Drink.class).size() == 0)
         {
         Notification gameOver = new Notification("win.jpg",getWidth()/2, getHeight()/2);
         addObject(gameOver,getWidth() / 2, getHeight() / 2 );

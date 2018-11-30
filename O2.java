@@ -6,8 +6,13 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  * @author (your name) 
  * @version (a version number or a date)
  */
-public class Bug extends Animal
+public class O2 extends Habitant
 {
+    public O2(){
+     GreenfootImage image = getImage ();
+        image.scale (image.getWidth()/12, image.getHeight()/12);
+        setImage (image);
+    }
     public void act()
     {
         
