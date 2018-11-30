@@ -13,21 +13,22 @@ public class LevelThree implements IUpgradeChain
     
     private IUpgradeChain next;
     
-        private Counter counter = Counter.getInstance();
-    
     private boolean isDone;
+    
+    private Counter counter;
     
     private int worldWidth,worldHeight;
 
     /**
      * Constructor for objects of class LevelTwo
      */
-    public LevelThree(TurtleWorld world)
+    public LevelThree(TurtleWorld world,Counter counter)
     {
         this.world = world;
         isDone = false;
         this.worldWidth = world.getWidth();
         this.worldHeight = world.getHeight();
+        this.counter=counter;
     }
 
     

@@ -13,7 +13,7 @@ public class LevelTwo implements IUpgradeChain
     
     private IUpgradeChain next;
     
-    private Counter counter = Counter.getInstance();
+    private Counter counter;
     
     private boolean isDone;
     
@@ -23,20 +23,19 @@ public class LevelTwo implements IUpgradeChain
     /**
      * Constructor for objects of class LevelTwo
      */
-    public LevelTwo(TurtleWorld world)
+    public LevelTwo(TurtleWorld world,Counter counter)
     {
         this.world = world;
         isDone = false;
         this.worldWidth = world.getWidth();
         this.worldHeight = world.getHeight();
+        this.counter=counter;
     }
 
     
     public void prepare()
     {
         isDone = true;
-        
-        world.addObject(counter, 58, 26);
         
         Turtle turtle = new Turtle();
         world.addObject(turtle, 171, 168);

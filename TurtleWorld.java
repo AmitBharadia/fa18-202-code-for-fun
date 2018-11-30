@@ -7,7 +7,7 @@ public class TurtleWorld extends World
     
     private IUpgradeChain current;
     private ScoreBoard score = new ScoreBoard(560, 440);
-    
+    private Counter counter=new Counter();
     
 
     /**
@@ -17,13 +17,13 @@ public class TurtleWorld extends World
     public TurtleWorld() 
     {
         super(600, 480, 1);
-        IUpgradeChain c1 = new LevelOne(this);
-        IUpgradeChain c2 = new LevelTwo(this);
-        IUpgradeChain c3 = new LevelThree(this);
+        IUpgradeChain c1 = new LevelOne(this,counter);
+        IUpgradeChain c2 = new LevelTwo(this,counter);
+        IUpgradeChain c3 = new LevelThree(this,counter);
         c1.setNext(c2);
         c2.setNext(c3);
-        
         current = c1;
+        addObject(counter, 58, 26);
         prepare();
     }
 
@@ -41,14 +41,12 @@ public class TurtleWorld extends World
      
        if(this.current != null)
        {
-       this.current.handleUpgrade();
+         this.current.handleUpgrade();
        }
        else
        {
            gameOver();
        }
-        
-        
     }
     
     /**

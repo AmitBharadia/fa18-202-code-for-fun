@@ -57,7 +57,7 @@ public class Turtle extends Animal implements IScoreSubject, ILifeSubject
             eat(Bug.class);
             updateLife(1);
             Greenfoot.playSound("slurp.wav");
-            createNewBug();
+            //createNewBug();
         }
  
     }
