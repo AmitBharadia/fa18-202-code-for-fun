@@ -19,12 +19,13 @@
 
 
 ### Team’s Sprint Task Sheet
+https://docs.google.com/spreadsheets/d/16SG5Yy2xIzYUI_3wfaMvu6BrerhzimhXEbUwTBTJ7l0/edit#gid=442463616
 
 
 ### Team's Project ad Video on Youtube
-
+https://docs.google.com/presentation/d/13BQCUUTbWlfxEV4DEmwNdJpn7Jmz7nOSYyP88XXDDBE/edit#slide=id.p1
 
 ### Powerpoint Presentation
-
+https://github.com/nguyensjsu/fa18-202-code-for-fun/blob/master/CMPE%20202.pptx
 
 
