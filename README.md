@@ -1,4 +1,4 @@
-# Code For Fun
+# The Martian Messenger
 
 ## Amit Bharadia(Implemented Observer Pattern and State Pattern)
 * The following tasks were completed by me:
