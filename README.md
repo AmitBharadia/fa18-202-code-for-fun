@@ -1,4 +1,4 @@
-# Code For Fun
+# The Martian Messenger
 
 ## Amit Bharadia(Implemented Observer Pattern and State Pattern)
 * The following tasks were completed by me:
@@ -19,12 +19,13 @@
 
 
 ### Team’s Sprint Task Sheet
+https://docs.google.com/spreadsheets/d/16SG5Yy2xIzYUI_3wfaMvu6BrerhzimhXEbUwTBTJ7l0/edit#gid=442463616
 
 
 ### Team's Project ad Video on Youtube
-
+https://docs.google.com/presentation/d/13BQCUUTbWlfxEV4DEmwNdJpn7Jmz7nOSYyP88XXDDBE/edit#slide=id.p1
 
 ### Powerpoint Presentation
-
+https://docs.google.com/presentation/d/13BQCUUTbWlfxEV4DEmwNdJpn7Jmz7nOSYyP88XXDDBE/edit#slide=id.p1
 
 
