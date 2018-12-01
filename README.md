@@ -26,6 +26,6 @@ https://docs.google.com/spreadsheets/d/16SG5Yy2xIzYUI_3wfaMvu6BrerhzimhXEbUwTBTJ
 https://docs.google.com/presentation/d/13BQCUUTbWlfxEV4DEmwNdJpn7Jmz7nOSYyP88XXDDBE/edit#slide=id.p1
 
 ### Powerpoint Presentation
-https://github.com/nguyensjsu/fa18-202-code-for-fun/blob/master/CMPE%20202.pptx
+https://docs.google.com/presentation/d/13BQCUUTbWlfxEV4DEmwNdJpn7Jmz7nOSYyP88XXDDBE/edit#slide=id.p1
 
 
