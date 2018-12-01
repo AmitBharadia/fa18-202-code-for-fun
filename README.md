@@ -23,7 +23,7 @@ https://docs.google.com/spreadsheets/d/16SG5Yy2xIzYUI_3wfaMvu6BrerhzimhXEbUwTBTJ
 
 
 ### Team's Project ad Video on Youtube
-https://docs.google.com/presentation/d/13BQCUUTbWlfxEV4DEmwNdJpn7Jmz7nOSYyP88XXDDBE/edit#slide=id.p1
+https://www.youtube.com/watch?v=lZM1UQDtqTE
 
 ### Powerpoint Presentation
 https://docs.google.com/presentation/d/13BQCUUTbWlfxEV4DEmwNdJpn7Jmz7nOSYyP88XXDDBE/edit#slide=id.p1
